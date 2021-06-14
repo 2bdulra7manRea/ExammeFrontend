@@ -1,0 +1,38 @@
+<div #formDialog [ngStyle]="{'display':Display}" class="dialog">
+<form #myform="ngForm" >
+    <span><button (click)="close()">Close</button></span>
+    <div>
+     <input type="text" ngModel name="name" placeholder="title room">    
+    </div>
+   <div>
+    <input type="number" ngModel name="numberOfpeople" placeholder="number of people">   
+   </div>
+    
+    <div>
+        <label>Access</label>
+        <select ngModel name="access">
+        <option>public</option>
+        <option>password</option>
+    </select>
+    </div>
+    <div>
+        <label>type of room</label>
+        <select name="type" ngModel>
+        <option>speaking</option>
+        <option>texting</option>
+    </select>
+    </div>
+    <div *ngIf="loading===false">
+        <label>invitations</label>
+        <select  name="invite" ngModel multiple>
+        <option *ngFor="let item of users" [value]="item._id" >{{item.name}}</option>
+    </select>
+    </div>
+
+
+
+    <div>
+        <button (click)="Create(myform)" >Create</button>
+    </div>
+</form>
+</div>

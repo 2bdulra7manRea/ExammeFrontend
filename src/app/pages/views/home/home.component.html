@@ -1,0 +1,125 @@
+<div class="container_home" *ngIf="userLogged===true" >
+<div >
+
+
+<div class="filter">
+
+    <div>
+        <label>Type</label>
+    
+    <select  [(ngModel)]='type' name="type" id="">
+       <option value="">---Not Select--</option>
+       <option>MSQ</option>
+       <option>Complete</option>
+   </select> 
+    </div>
+    <div>
+
+        <label>access</label>
+    <select [(ngModel)]='access' name="access" id="">
+        <option value="">---Not Select---</option>
+       <option>public</option>
+       <option>key</option>
+   </select> 
+    </div>
+
+    <div>
+ <button (click)="filter()" class="btnfilter" >Filter</button>
+    </div>
+
+</div> 
+<div class="filterbtnMobile">
+    <button (click)="showFilter()" >Filter</button>
+</div>
+
+<div class="box">
+    <div class="card" *ngFor="let item of Exams" >
+        <h3>{{item.title}}</h3>
+        <h5>{{item.type}}</h5>
+        <h5>{{item.duration}} mins</h5>
+        <h5>{{item.Nquestions}} questions</h5>
+        <a  [routerLink]="['/take-exam/',item._id]">Take an exam</a>
+    </div>
+</div>
+
+<div *ngIf="users.length!==0" class="users m">
+    <div *ngFor="let item of users" class="b1">
+        <div>
+          <h4>{{item.name | uppercase }}</h4>  
+        </div>
+        <div>
+          <p [ngClass]="{'online':item.state , 'offline':!item.state}" >{{item.state?"Online":"Offline"}}</p>  
+        </div>
+        <div>
+            <a class="profLink" [routerLink]="['/myaccount',item._id]" >Profile</a> 
+        </div>
+    </div>
+</div>
+
+
+
+
+<app-dialog-room (sendFormData)="getFormData($event)" [Display]="displayDialog" ></app-dialog-room>
+<div *ngIf="token!==''" class="createRoom">
+<button (click)="createRoom()">Create A room</button>
+</div>
+<div #room class="rooms">
+    <div class="box-room" *ngFor="let item of rooms">
+        <span *ngIf="item.userName===userName" ><button (click)="deleteMyRoom(item._id,item.userName)" >Delete</button></span>
+        <h3>{{item.name}}</h3>
+        <h5 class="owner">Created by: {{item.userName}}</h5>
+        <!--
+        <div class="inside" *ngIf="item.people">
+            <span class="inside-Udo" *ngFor="let p of item.people">
+            {{p}}
+            </span>
+        </div>
+        -->
+        <div class="inside" *ngIf="item.users">
+            <span class="inside-Udo" *ngFor="let U of item.users">
+            {{U}}
+            </span>
+        </div>
+        <a [routerLink]="['/chat',item._id]">Join room</a>
+    </div>
+</div>
+
+
+
+
+
+</div>
+
+<div class="filterMobile" #mobile >
+    <span><button (click)="CloseFilter()" >Close</button></span>
+    <section>
+    <div>
+        <label>Type</label>
+    <select (ngModelChange)="GetSelect($event)" [(ngModel)]='type' name="type" id="">
+       <option value="">---Not Select--</option>
+       <option>MSQ</option>
+       <option>Complete</option>
+       <option>Mixed</option>
+   </select> 
+    </div>
+    <div>
+        <label>access</label>
+    <select (ngModelChange)="GetSelect($event)" [(ngModel)]='access' name="access" id="">
+        <option value="">---Not Select---</option>
+        <option>private</option>
+       <option>public</option>
+       <option>key</option>
+   </select> 
+    </div>
+
+    <div>
+ <button (click)="filter()" class="btnfilter" >Filter</button>
+    </div>
+</section>
+</div>
+</div>
+
+
+<div class="userNotLogged" *ngIf="userLogged===false">
+    <h1>Please log in</h1>
+</div>

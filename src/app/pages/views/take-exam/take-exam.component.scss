@@ -1,0 +1,121 @@
+.container{
+    width:100%;
+    background-color: rgb(47, 49, 53);
+    min-height:1200px;
+    display: flex;
+    justify-content: center;
+}
+.container-box{
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+.start-exam{
+    width:70%;
+}
+
+
+.box-start{
+    margin:10px 0px;
+    padding:25px;
+    border:2px dashed rgb(117, 122, 133);
+}
+
+label{
+    color: white;
+    font-size: 1.4rem;
+    display: block;
+    text-transform: capitalize;
+}
+
+input{
+    padding:10px;
+    outline: none;
+    border: none;
+    width:50%;
+}
+
+button{
+    padding:10px;
+    background-color: blue;
+    color: white;
+    outline: none;
+    border: none;
+
+&:hover{
+    background-color: rgb(49, 49, 246);
+}
+
+}
+header{
+    width:100%;
+    background-color: rgba(63, 63, 80, 0.781);
+    padding:10px;
+    display: flex;
+
+    ul{
+
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        width:60%;
+        li{
+            color: whitesmoke;
+        }
+    }
+}
+
+.progressBar{
+    width:100%;
+    height:30px;
+}
+
+.loading{
+    width:500px;
+    background-color: rgba(20, 20, 26, 0.781);
+    height:500px;
+    cursor: pointer;
+    box-shadow:2px 2px 2px rgb(69, 72, 78);
+    margin:100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    h1{
+        font-size:2rem;
+        color: white;
+        color: rgb(132, 255, 183);
+    }
+}
+
+.owner{
+    width:220px;
+    height:140px;
+    background-color: whitesmoke;
+    position: fixed;
+    right:0px;
+    top:200px;
+    border-radius:20px;
+    padding:20px;
+    filter: drop-shadow(2px 1px 1px lightgrey);
+}
+
+.msq{
+    select{
+        width:100%;
+        border: none;
+        outline: none;
+        padding:5px;
+        option{
+            background-color: rgb(235, 235, 235);
+        }
+    
+    }
+}
+
+.progress{
+    width:300px;
+    height:30px;
+    }
+    
+    

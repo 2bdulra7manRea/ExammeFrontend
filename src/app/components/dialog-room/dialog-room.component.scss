@@ -1,0 +1,36 @@
+.dialog{
+    position: absolute;
+    right:25%;
+    width:50%;
+    top:120%;
+    height:700px;
+    background-color: white;
+    color: black;
+    padding:20px;
+    border-radius:50px;
+    display:none;
+    form{
+    display: flex;
+    flex-direction: column;  
+
+      >div{
+          margin:20px 0px;
+        width:100%;
+        >input,select{
+            border:2px dashed rgb(19, 19, 42);
+            outline: none;
+            padding:5px;
+            width: 100%;
+        }
+        button{
+            padding:20px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            outline: none;
+            width:90%;
+            margin-left:40px;
+        }
+    }  
+    } 
+}

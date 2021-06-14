@@ -1,0 +1,65 @@
+<div class="container"  >
+
+
+
+
+<div class="start-exam" *ngIf="loading===false">
+
+<header>
+       <ul>
+           <li>{{Exam.exam.title}}</li>
+           <li>{{Exam.exam.duration}} mins</li>
+            <li>score:{{Exam.questions.questions.length}}/{{myscore}}</li>
+       </ul>
+       <progress  class="progress" [max]="Exam.questions.questions.length" [value]="progress"></progress>
+</header>
+
+
+
+<div *ngIf="type==='Complete'">
+<div class="box-start" *ngFor="let item of Exam.questions.questions" #x>
+    <form #myform='ngForm'>
+    <label>{{item.question}}</label>
+    <input ngModel name='answer' placeholder="Enter yout answer" type="text">
+    </form>
+    <button (click)='submitAnswer(item.answer,item.question,myform,x)'>Submit</button>
+</div>
+</div>
+
+
+
+
+<div *ngIf="type==='MSQ'">
+    <div class="box-start"  *ngFor="let item of Exam.questions.questions" #h>
+    <form #msq="ngForm" class="msq">
+        <label>{{item.question}}</label>
+       <select ngModel name="MSQ">
+            <option [value]="item.answerWrong2"  >{{item.answerWrong2}}</option>
+           <option [value]="item.answerRight" >{{item.answerRight}}</option>
+           <option [value]="item.answerWrong1"  >{{item.answerWrong1}}</option>
+       </select>
+    </form>   
+       <button (click)="SubmitMsq(msq,item.answerRight,h)" >Submit</button>
+    </div>
+    
+</div>
+
+<div>
+    <button (click)="tryAgain()">Try again</button>
+</div>
+
+
+
+
+
+
+</div>
+
+<div class="loading" *ngIf="loading===true">
+    <h1>{{message}}</h1>
+</div>
+
+
+
+
+</div>

@@ -1,0 +1,52 @@
+<section class="container">
+<div class="container-box">
+
+    
+<div *ngIf="people.length!==0" class="people">
+
+<figure *ngFor="let item of people">
+
+<p *ngIf="item.found===true">{{item.messageSocket===userName?"you":item.messageSocket}} joined the room</p>  
+<p *ngIf="item.found===false">{{item.messageSocket===userName?"you":item.messageSocket}} left the room</p> 
+
+<span>{{item.Time}}</span>  
+</figure>
+</div>  
+
+
+<div class="cameraVideoCall">
+<div class="tool">
+    <button (click)='GoWebcam()' >Go live</button>
+    <button (click)='StopWebcam()' *ngIf="recording===false" >Stop webcam</button>
+    <button (click)='RecordVideo()' >Record</button>
+    <button  *ngIf="recording===true" (click)='stopRecordVideo()' >stop Record</button>
+    <a    #downloadLink     download="Vid.mp4" >Download</a>
+</div>
+
+<div class="webcam">
+<video #screan>
+</video>
+</div>
+</div>
+
+
+<div class="chat-box" #boxChat>
+    <div class="chat" #chat > 
+    </div>
+    <textarea wrap="soft" autofocus rows="4" cols="20"  spellcheck="true" (keyup)="sendMessage($event,input)"  #input>
+    </textarea>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</section>

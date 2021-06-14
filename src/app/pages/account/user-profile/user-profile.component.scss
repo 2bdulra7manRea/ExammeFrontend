@@ -1,0 +1,139 @@
+*{
+    object-fit:cover;
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(250, 250, 250);
+    padding-bottom:100px;
+}
+.myProfile{
+    width:80%;
+    background-color: white;
+}
+
+
+.otherProfile{
+    background-color: white;
+    width:70%;
+}
+.bigImg{
+    width:100%;
+    height:340px;
+    cursor: pointer;
+    background-image:linear-gradient(to bottom , rgb(129, 129, 129) , rgb(226, 226, 226));
+}
+.myImg{
+    width:150px;
+    height:150px;
+    background-color: brown;
+    border:2px solid white;
+    padding:5px;
+    object-fit: cover;
+    transform: translateY(-75px);
+}
+
+.smallCard{
+    transform: translateY(-75px);  
+    color: rgb(9, 9, 29); 
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.enterImg{
+    position: absolute;
+    
+}
+
+.myExams{
+    width:100%;
+   padding:10px;
+    background-color: rgb(233, 233, 190);
+}
+.cardExam{
+    cursor: pointer;
+    padding:20px;
+    border:1px dashed rgb(9, 9, 29);
+    transition:.2s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    &:hover{
+        background-color: rgb(21, 0, 92);
+        color: white;
+        a{
+            color: white;
+        }
+    }
+}
+
+.follow{
+    width:100%;
+    padding:20px;
+    margin:30px 0px;
+    button{
+        width:80%;
+        padding:6px;
+        background-color: blue;
+        color: white;
+        border: none;
+        outline: none;
+        &:active{
+            background-color: white;
+            color: blue;
+        }
+    }
+}
+.followers{
+    padding:10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    color: blue;
+    cursor: pointer;
+    &:hover{
+        color: rgb(92, 92, 255);
+    }
+}
+
+.module{
+    position: relative;
+    width:400px;
+    height:400px;
+    background-color: white;
+    box-shadow:2px 2px 4px lightgray , -2px -2px 4px lightgray;
+    position: absolute;
+    top:34%;
+    left:34%;
+    padding:20px;
+    button{
+    position: absolute;
+    bottom:0px;
+    padding:10px;
+    color: white;
+    background-color: blue;
+    border: none;
+    outline: none;
+    margin:20px;
+    filter: drop-shadow(6px 6px 6px rgb(168, 166, 166));
+
+}
+}
+
+.module-info{
+    
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+a{
+    padding:10px;
+    color: white;
+    background-color: blue;
+    text-decoration: none;
+}
+
+}

@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>Exam-Room</h1>
+
+  <form #form=ngForm >
+    <div class="form-group">
+      <label>Type of exam</label>
+      <select ngModel name="type" id="">
+          <option>MSQ</option>
+          <option>Complete</option>
+          <option>Mixed</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label  >Title of exam</label>
+      <input type='text' ngModel name="title"  />
+    </div>
+    <div class="form-group">
+      <label>Access</label>
+      <select ngModel (ngModelChange)='accessValue($event)' name="access" id="">
+        <option>private</option>
+        <option>public</option>
+        <option>key</option>
+    </select>
+    </div>
+    <div *ngIf="access" class="form-group">
+      <label>Access key</label>
+      <input type="text" ngModel placeholder="please provide access key" name="key" />
+    </div>
+
+    <div class="form-group">
+      <label>Number of questions</label>
+      <input type="number" ngModel name="Nquestions" />
+    </div>
+    <div class="form-group">
+      <label>Duration min</label>
+      <input type="number" ngModel name="duration" />
+    </div>
+
+    <div class="form-group">
+       <button class="save" (click)="save(form)">Save</button>
+    </div>
+
+  </form>
+</div>

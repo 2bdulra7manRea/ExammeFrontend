@@ -1,0 +1,121 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+.people{
+    width:20%;
+    height:100%;
+    background-color: rgb(45, 40, 49);
+    figure{
+        background-color: crimson;
+        display: flex;
+        justify-content: space-between;
+        padding:10px 5px;
+        text-transform: capitalize;
+        color: white;
+        border-radius:20px;
+        margin:2px;
+    }
+figure:nth-child(2n){
+    background-color:rgb(111, 0, 185);
+}
+    
+}
+
+
+
+.container{
+    width:100%;
+    height:630px;
+    background-color:rgb(45, 40, 49);
+    display: flex;
+    padding:50px 0px;
+}
+
+.container-box{
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    width:100%;
+}
+.cameraVideoCall{
+width:46%;
+background-color: black;
+margin:0px 50px;
+filter: drop-shadow(2px 2px 2px rgb(105, 105, 119));
+}
+
+.tool{
+    background-color: rgb(26, 23, 29);
+    padding:20px;
+    button{
+        padding:5px;
+        background-color: rgb(42, 52, 80);
+        color: white;
+        border: none;
+        outline: none;
+        margin:5px;
+    }
+}
+
+
+.webcam{
+    width:100%;
+    height:400px;
+    border:2px dashed rgb(94, 84, 102);
+    background-image: linear-gradient(to right ,rgb(83, 83, 97) , rgb(39, 39, 58));
+video{
+    width:100%;
+    height:100%;
+}
+
+}
+
+.chat-box{
+width:30%;
+height:100%;
+//background-color: rgb(26, 23, 29);
+background-color: rgb(38, 34, 42);
+border:2px dashed rgb(94, 84, 102);
+overflow: hidden;
+transition:.3s ease-in-out;
+position: relative;
+.chat{
+    width:100%;
+    height:80%;
+    //background-color: rgb(34, 31, 37);
+    background-color: rgb(38, 34, 42);
+    padding:10px;
+    overflow-y: auto;
+}
+
+textarea{
+    position: absolute;
+    bottom:0px;
+    width:100%;
+    border:2px dashed blue;
+    outline: none;
+    background-color: rgb(45, 40, 49);
+    color: white;
+    overflow:hidden;
+    resize: none;
+    &:focus-visible ,:hover{
+        border:1px dashed rgb(103, 103, 255);
+    }
+}
+
+
+
+
+}
+
+.menuChat{
+    height:80%;
+    background-color: rgb(26, 23, 29);
+    position: fixed;
+    padding:10px;
+    right:0px;
+    top:100px;
+}

@@ -1,0 +1,46 @@
+<div class="container">
+
+<div class="exam-dashboard">
+
+
+<nav #nav>
+<span class="navbtn"><button #btn1 (click)="toggleNav()" >close</button></span>    
+<ul>
+<li><a routerLink='/exam/create'>Create Exam</a></li>
+</ul>
+
+
+
+<div class="exmas-links" *ngFor="let item of exams; let i=index">
+<button (click)='display(i)'>{{item.title}}</button>
+
+<ul [ngStyle]="{'display':i===current?'block':'none'}" >
+    <li><a [routerLink]="['/exam/info',item._id]">{{item.title}}</a></li> 
+    <li><a [routerLink]="['/exam/form',item._id]">implement</a></li>
+    <li><a [routerLink]="['/exam/study',item._id]">Study</a></li>
+    <li><a [routerLink]="['/exam/start',item._id]">Start</a></li>
+</ul>
+
+</div>
+
+
+</nav>
+
+
+
+<section class="main-dash">
+<router-outlet></router-outlet>
+</section>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>

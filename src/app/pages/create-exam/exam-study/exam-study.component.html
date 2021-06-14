@@ -1,0 +1,37 @@
+<div class="center_box" *ngIf="loading===false">
+
+
+
+
+<div class="study-exam" *ngIf="Questions!==null"> 
+
+
+<h1>{{Questions.title_exam}}</h1>
+
+<div class="study-box" *ngFor="let item of Questions.questions; let i=index">
+    <h2>({{i+1}}) {{item.question}} ?</h2>
+    <h3>- {{item.answer?item.answer:item.answerRight}}</h3>
+</div>
+
+
+
+
+
+
+</div>
+<div class="loading" *ngIf="Questions===null">
+<h1>No questions be found</h1>
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+<div *ngIf="loading==true">
+    <h1>LOADING..........</h1>
+</div>

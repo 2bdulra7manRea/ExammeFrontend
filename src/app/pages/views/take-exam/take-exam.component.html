@@ -1,0 +1,88 @@
+<div class="container"  >
+
+
+
+<div class="container-box" *ngIf="loading===false">
+    <div *ngIf="Exam.exam.examOwner"  class="owner">
+        <h3>Created by:{{Exam.exam.examOwner.name}}</h3>
+        <h3>Email :{{Exam.exam.examOwner.email}}</h3>
+        <h3>state :{{Exam.exam.examOwner.state}}</h3>
+    </div>
+      <div class="loading" *ngIf="access===false">
+        <div>
+            <label >Access key</label>
+            <input type="password"  [(ngModel)]='key' name='key'  placeholder="please enter the access key">
+            <button (click)="Enter()" >Enter</button>
+        </div>
+    </div>
+     
+<div class="container-box" *ngIf="access===true">
+  <div class="start-exam" *ngIf="questionFound===true">
+    <progress  class="progressBar" [max]="Exam.questions.questions.length" [value]="progress"></progress>  
+    <header>
+           <ul>
+               <li>{{Exam.exam.title}}</li>
+               <li>{{Exam.exam.duration}} mins</li>
+                <li>score:{{Exam.questions.questions.length}}/{{myscore}}</li>
+           </ul>
+           <!--
+           <progress  class="progress" [max]="Exam.questions.questions.length" [value]="progress"></progress>
+            -->
+        </header>
+    
+    
+    
+    <div *ngIf="type==='Complete'">
+    <div class="box-start" *ngFor="let item of Exam.questions.questions" #x>
+        <form #myform='ngForm'>
+        <label>{{item.question}}</label>
+        <input ngModel name='answer' placeholder="Enter yout answer" type="text">
+        </form>
+        <button (click)='submitAnswer(item.answer,item.question,myform,x)'>Submit</button>
+    </div>
+    </div>
+    
+    
+    
+    
+
+    <div *ngIf="type==='MSQ'">
+        <div class="box-start"  *ngFor="let item of Exam.questions.questions" #h>
+        <form #msq="ngForm" class="msq">
+            <label>{{item.question}}</label>
+           <select ngModel name="MSQ">
+                <option [value]="item.answerWrong2"  >{{item.answerWrong2}}</option>
+               <option [value]="item.answerRight" >{{item.answerRight}}</option>
+               <option [value]="item.answerWrong1"  >{{item.answerWrong1}}</option>
+           </select>
+        </form>   
+           <button (click)="SubmitMsq(msq,item.answerRight,h)" >Submit</button>
+        </div>
+        
+    </div>
+    
+    <div>
+        <button (click)="tryAgain()">Try again</button>
+    </div>
+    
+    
+    
+    
+    </div>
+
+    <div class="loading" *ngIf="questionFound===false">
+        <h1>{{message}}</h1>
+    </div>
+
+</div>
+   
+</div>
+  
+
+
+    <div class="loading" *ngIf="loading===true">
+        <h1>{{message}}</h1>
+    </div>
+    
+    
+    </div>

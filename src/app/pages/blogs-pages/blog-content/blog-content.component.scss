@@ -1,0 +1,23 @@
+.container{
+    width:100%;
+    background-color: whitesmoke;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    padding:20px;
+}
+
+section{
+height:600px;
+}
+
+article{
+    padding:20px;
+    width:80%;
+}
+
+article p {
+    font-size:1.3rem;
+    font-family: sans-serif;
+    line-height:40px;
+}

@@ -1,0 +1,41 @@
+<div class="container center_box"  *ngIf="loading">
+
+<div class="box-info">
+<h2>{{exam.title}}</h2>
+<span><button (click)="deleteExam()" class="delete">Delete</button></span>
+<table class="tree">
+   <tr>
+       <th>Type</th>
+       <td>{{exam.type}}</td>
+   </tr>
+   <tr>
+    <th>Access</th>
+    <td>{{exam.access}}</td>
+    </tr>
+<tr *ngIf="exam.access==='key'" >
+    <th>Key</th>
+    <td>{{exam.key}}</td>
+</tr>
+
+<tr >
+    <th>Questions</th>
+    <td>{{exam.questions_id?"Questions be Found":"Questions Not be Found"}}</td>
+</tr>
+
+
+   <tr>
+    <th>Duration</th>
+    <td>{{exam.duration}} mins</td>
+</tr>
+<tr>
+    <th>Time created</th>
+    <td>{{exam.timeCreated|slice:0:10}}</td>
+</tr>
+<tr>
+    <th>Number of questions</th>
+    <td>{{exam.Nquestions}}</td>
+</tr>
+</table>
+</div>
+
+</div>

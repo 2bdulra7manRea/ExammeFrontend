@@ -1,0 +1,36 @@
+.container{
+    
+}
+.box-info{
+    position: relative;
+    width:80%;
+    text-align: center;
+    >*{
+        margin:50px 0px;
+    }
+h2{
+    font-size: 2rem;
+}
+
+}
+
+.tree{
+    width:100%;
+    background-color: rgb(196, 202, 255);
+    tr{
+        height:70px;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+
+}
+.delete{
+    background-color: blue;
+    color: whitesmoke;
+    padding:10px;
+    border: none;
+    border-radius:10px;
+    &:hover{
+        background-color: rgb(42, 42, 197);
+    }
+}

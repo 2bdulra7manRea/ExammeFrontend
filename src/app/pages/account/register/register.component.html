@@ -1,0 +1,32 @@
+<div class="container">
+<div class="box">
+    <h1>Register</h1>
+    <form #myform="ngForm" >
+        <div>
+            <label>Username</label>
+     <input type="text" ngModel  name="name" placeholder="username"> 
+         </div>
+        <div>
+           <label>Email</label>
+    <input type="email" ngModel  name="email"  placeholder="e-mail"> 
+        </div>
+    
+        <div>
+            <label>Password</label>
+     <input type="password" ngModel  name="password"  placeholder="password"> 
+         </div>
+     
+         <div>
+        <label>profile picture</label>
+     <input type="file" (change)="UploadImg($event)" >
+        </div>
+    <button class="btn" (click)="userRegister(myform)" >create account</button>
+    <h5>You have already account ?<a routerLink='/login'>Login</a></h5>
+    </form>
+
+    <div *ngIf="error===true" class="error">
+        <h2>{{message}}</h2>
+    </div>
+</div>    
+    
+    </div>

@@ -1,0 +1,25 @@
+<div class="container">
+<div class="box">
+<h1>Login in</h1>
+
+<form #myform="ngForm">
+    <div>
+       <label>Email</label>
+        <input type="email" ngModel name="email" placeholder="e-mail"> 
+    </div>
+
+    <div>
+        <label>Password</label>
+ <input type="password" ngModel name="password" placeholder="password"> 
+     </div>
+ 
+<button class="btn" (click)="loginUser(myform)">Login</button>
+<h5>You don`t have account ?<a routerLink='/register'>Register</a></h5>
+</form>
+
+<div *ngIf="error===true" class="error">
+    <h2>{{message}}</h2>
+</div>
+</div>
+
+</div>

@@ -1,0 +1,32 @@
+<div class="playground">
+
+<div class="playground-box">
+<div>
+    <h1>Record your voice</h1>
+</div>
+
+
+
+
+
+
+<div class="audio-box">
+<button [ngClass]="{'record-btn':recording}" (click)="initRecord()">{{recording===true?'Recording':'record'}}</button> 
+
+<button *ngIf="recording===true" (click)="stopRecord()">Stop</button>    
+<a #m download="output.wav">Download</a>
+</div>
+
+
+<div>
+<audio #audio controls>
+</audio>    
+</div>
+
+
+
+</div>
+
+
+
+</div>

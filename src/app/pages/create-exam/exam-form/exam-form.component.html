@@ -1,0 +1,67 @@
+ 
+ 
+<div class="questionfound" *ngIf="flagForQuestionsExisting===true">
+
+
+ 
+<div class="box">
+<h1>There is questions here</h1>    
+</div>
+
+</div>
+
+
+
+
+ <div class="container" *ngIf="flagForQuestionsExisting===false">
+<section class="msq" *ngIf="type==='MSQ'">
+<div  class="box" *ngFor="let item of numberOfQuestions" #x >
+    <form #myform='ngForm'>
+    <label>({{item+1}}) Question</label>
+    <input type="text" ngModel name="question" placeholder="Please enter the Question !">
+    <div>
+        <input ngModel  required name="answerRight" placeholder="Enter The Right Answer" type="text">
+    </div>
+    <div>
+        <input ngModel name="answerWrong1" placeholder="Enter The wrong Answer" type="text">
+    </div>
+    <div>
+         <input ngModel name="answerWrong2" placeholder="Enter The Wrong Answer" type="text">
+    </div>    
+ </form> 
+ <button class="btn" (click)='getQuestions(myform,x)'>Save</button>
+</div>
+</section>
+
+
+<section class="complete" *ngIf="type==='Complete'">
+<div class="box" *ngFor="let item of numberOfQuestions" #x>
+<form #myform='ngForm'>
+<label>({{item+1}})Question</label>
+<input placeholder="Question" required ngModel name="question" type="text">
+<label>The answer</label>
+<input type="text" name="answer" required ngModel placeholder="Enter the answer">
+</form>
+<button class="btn"  (click)='getQuestions(myform,x)'>Save</button>
+</div>
+
+
+</section>
+<section class="mixed" *ngIf="type==='Mixed'">
+<h1>MIXED</h1>
+    
+</section>
+    
+
+
+
+
+
+
+
+<div class="examForm">
+<button (click)="Senddate()">Create Exam</button>
+</div>
+
+</div>
+

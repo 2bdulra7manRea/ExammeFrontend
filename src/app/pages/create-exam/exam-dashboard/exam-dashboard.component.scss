@@ -1,0 +1,104 @@
+@mixin LinkBtn($color){
+    display: block;
+    padding:10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    color:$color;
+    font-size: 1.3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+.container{
+    width:100%;
+    height:100%;
+}
+.exam-dashboard{
+    width:100%;
+    height:1200px;
+}
+
+
+nav{
+    width:20%;
+    background-color: rgb(37, 37, 44);
+    padding:20px 0px;
+    float: left;
+    height:100%;
+    overflow: hidden;
+    transition:.4s ease-in-out;
+ul{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+    li{
+        a{
+            @include LinkBtn(rgb(204, 253, 44))
+        }
+
+        &:hover{
+            box-shadow:1px 0px 2px rgb(204, 253, 44);
+        }
+    }
+}
+
+}
+
+.navbtn{
+    position: fixed;
+    bottom:100px;
+    right:10px;
+    button{
+        padding:10px;
+        background-color: crimson;
+        color: white;
+        border-radius:100%;
+    }
+}
+
+.main-dash{
+    width:80%;
+    float:left;
+    overflow-y: auto;
+    height:1200px;
+}
+
+.exmas-links{
+background-color: rgb(43, 43, 44);
+padding:10px;
+overflow: hidden;
+button{
+    width:100%;
+    padding:10px;
+    color: white;
+    outline: none;
+    border: none;
+    background-color: rgba(19, 18, 18, 0.198);
+    text-transform: capitalize;
+}
+
+ul{
+    transition:1s ease-in-out;
+    overflow: hidden;
+    text-align: center;
+    li a{
+        @include LinkBtn(rgb(219, 219, 219))
+    
+    }
+
+}
+
+
+
+
+
+
+}

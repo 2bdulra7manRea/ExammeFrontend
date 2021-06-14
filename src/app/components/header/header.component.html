@@ -1,0 +1,67 @@
+<nav>
+    <a class="linkTitle" routerLink='/'>EXAMME</a>
+    <div class="navbar-web">
+        <ul>
+         <li><a routerLink='/exam'>Exams</a></li>   
+         <li><a routerLink='/playground'>Playground</a></li>
+         <li><a routerLink='/list/blogs'>Blogs</a></li>       
+        </ul>
+        <div>
+            <input placeholder="search for anything..." type="search">
+        </div>
+    
+    <div class="user-account">
+        <ul *ngIf="auth===false">
+          <li><a routerLink='/login'>login</a></li>    
+        </ul>
+        <ul *ngIf="auth===true">
+            <li><a [routerLink]="['/myaccount',idUser]">my account</a></li>   
+            <li>Messages <span class="message">{{Nmessage}}</span>  </li> 
+    
+            <li class="subMenuBar">
+                <button (click)="ShowNotify()">notifications {{numberOfNofications}}</button>
+    
+                <div class="MenuNotificationsDiv" #MenuNotifications>
+                    
+                <ul class="dropDown" *ngIf="noificationsLoading===false">
+                    <p>Notifications:</p>
+                    <li *ngFor="let item of noifications" >
+                        {{item.message}}
+                        <span>{{item.date|pipeTime}}</span>
+                    </li>
+                </ul>
+                </div>
+    
+            </li> 
+    
+    
+            <li><button  class="logout" (click)="logOut()" >Log out</button></li>  
+        </ul>
+    </div>
+    </div>
+    
+    <div class="menu">
+    <button class="menu-btn" (click)="menu(navbar)">Menu</button>
+    </div>
+    
+    
+    <div class="navbar-mobile" #navbar >
+    <div>
+            <input placeholder="search for anything..." type="search">
+    </div>
+    <ul>
+        <li><a routerLink='/exam'>Exams</a></li>     
+        <li><a routerLink='/playground'>Playground</a></li>   
+        <li><a routerLink='/list/blogs'>Blogs</a></li> 
+    </ul>
+    <ul *ngIf="auth===false">
+        <li><a routerLink='/login'>login</a></li>    
+      </ul>
+      <ul *ngIf="auth===true">
+          <li><a [routerLink]="['/myaccount',idUser]">My account</a></li>   
+          <li><button  class="logout" (click)="logOut()" >Log out</button></li>  
+      </ul>
+    </div>
+    </nav>
+    
+    

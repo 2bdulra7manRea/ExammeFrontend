@@ -1,0 +1,63 @@
+<div class="container">
+
+
+<div class="myProfile" *ngIf="loading===false" >
+<div class="bigImg">
+    <!--
+<img width="100%" #imgBack  src="../../../../assets/img/doctype-hi-res.jpg" height="100%">    
+-->
+</div>
+<div class="myImg">
+    <img width="100%" src="../../../../assets/img/Person.png" height="100%" >
+</div>
+<div class="smallCard">
+    <h1>{{userInfo.name}}</h1>
+    <button (click)="GetFollowers()"class="followers" >{{followers}}  followers </button>
+    <button (click)="GetFollowing()"class="followers" >{{following}}  following </button>
+</div>
+<div class="myExams" *ngIf="examsFound===true">
+<div class="cardExam" *ngFor="let item of exams" >
+    <h4>{{item.title}}</h4>
+    <h4>{{item.type}}</h4>
+    <a [routerLink]="['/exam/info/',item._id]">more Info</a>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="otherProfile" *ngIf="loadingTwo===false&&otherPerson===true">
+    <div class="bigImg">
+        <!--
+        <img width="100%" #imgBack  src="../../../../assets/img/doctype-hi-res.jpg" height="100%">    
+        -->
+    </div>
+        <div class="myImg">
+            <img width="100%" src="../../../../assets/img/Person.png" height="100%" >
+        </div>
+        <div class="smallCard">
+            <h1>{{userInfo.name}}</h1>
+            <button (click)="GetFollowers()"class="followers" >{{followers}}  followers </button>
+        <span class="followers">{{flagFollowing===true?"Follows you":""}}</span>
+</div>
+<section class="follow">
+    <button #btn (click)="IWantFollow()">{{UserIsFollowing()?"Unfollow":"Follow"}}</button>
+</section>
+
+
+</div>
+
+
+</div>
+
+
+<section class="module" *ngIf="module===true" >
+    <h2>{{moduleAction}}</h2>
+    <div class="module-info" *ngFor="let item of followInfo">
+        <h4>{{item.name}}</h4>
+        <a [routerLink]="['/myaccount',item._id]">Profile</a>
+    </div>
+    <button class="btn" (click)="closeModule()">Close</button>
+</section>

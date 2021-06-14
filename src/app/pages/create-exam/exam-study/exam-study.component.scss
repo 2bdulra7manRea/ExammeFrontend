@@ -1,0 +1,49 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+
+.study-exam{
+    h1{
+        font-size:2rem;
+        text-transform: capitalize;
+    }
+    background-color:whitesmoke;
+    width:80%;
+    min-height:1200px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.study-box{
+    width:100%;
+    background-image: linear-gradient(to right , crimson , rgb(173, 0, 35));
+    border-radius:20px;
+    color: whitesmoke;
+    padding:20px;
+    text-transform: capitalize;
+    margin:20px 0px;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 2px lightgrey);
+}
+
+.loading{
+    width:500px;
+    background-color: rgba(20, 20, 26, 0.781);
+    height:400px;
+    cursor: pointer;
+    box-shadow:2px 2px 2px rgb(69, 72, 78);
+    margin:100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    h1{
+        font-size:2rem;
+        color: white;
+        color: rgb(132, 255, 183);
+    }
+}
