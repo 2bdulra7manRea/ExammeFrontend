@@ -55,7 +55,7 @@ HeaderComponent,
     ReactiveFormsModule,
     FormsModule,
     StoreModule.forRoot({infoUserAuth:ApiReducer}),
-    SocketIoModule.forRoot({url:environment.SOCKET_URL,options:{}})
+    SocketIoModule.forRoot({url:'https://examme.herokuapp.com',options:{}})
   ],
   providers: [SocketService , AuthUser ,ComponentsService ,CheckForUser],
   bootstrap: [AppComponent]
