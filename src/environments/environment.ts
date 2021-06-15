@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  SOCKET_URL:'https://examme.herokuapp.com/',
-  SERVER_URL:'https://examme.herokuapp.com/'
+  SOCKET_URL:'http://localhost:5000',
+  SERVER_URL:'https://localhost:5000/'
 };
 
 /*

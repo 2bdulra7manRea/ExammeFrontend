@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { BaseApi } from 'src/app/core/networks/baseApi.service';
@@ -9,7 +9,7 @@ import { SocketService } from 'src/app/core/socketApi';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit , OnChanges {
   auth: boolean = false;
   num: number = 0;
   idUser: string = '';
@@ -24,6 +24,9 @@ export class HeaderComponent implements OnInit {
   @ViewChild("MenuNotifications") MenuNotificationsDiv: ElementRef<HTMLDivElement>
   constructor(private Socket: SocketService,protected store:Store<boolean>, private Router: Router, private httpService: BaseApi) { }
 
+
+
+
   ngOnInit(): void {
 console.log('ng header ::::::::::::::::::::::::::::::')
 
@@ -37,7 +40,13 @@ console.log('ng header ::::::::::::::::::::::::::::::')
       this.auth = false
     }
   }
-
+ngOnChanges(){
+if(localStorage.getItem('token')!==''){
+  this.auth=true
+}else{
+  this.auth=false
+}
+}
 
   ngAfterViewInit(): void {
     if (this.userLogged === true) {

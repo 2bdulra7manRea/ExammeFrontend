@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { environment } from "src/environments/environment";
 
 
 
@@ -7,7 +8,7 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class BaseApi{
 
-url:string='https://examme.herokuapp.com/';
+url:string=environment.SERVER_URL;
 protected idUser:string=localStorage.getItem('userid');
 
 
